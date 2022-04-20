@@ -45,17 +45,115 @@
 
     <script src="scripts/home.js"></script>
 
-	<div class="container">
-
-        <div class="logo" id="logo"><b class="off"><span id="c1">Co</span><span id="c2">nec</span><span id="c3">ta</span><span id="c4">n</span><span id="c5">do...</span></b></div>
-
-        <div class="buttons-box">
-            <a class="btn-action btn-meeting" onclick="submitStats(1)">Em Reunião</a>
-            <a class="btn-action btn-busy" onclick="submitStats(2)">Ocupado</a>
-            <a class="btn-action btn-available" onclick="submitStats(3)">Disponível</a>
+	<div class="container main">
+        
+        <div class="homeoffice col-md-5">
+            <div class="logo" id="logo"><b class="off"><span id="c1">Co</span><span id="c2">nec</span><span id="c3">ta</span><span id="c4">n</span><span id="c5">do...</span></b></div>
+            <div class="buttons-box">
+                <a class="btn-action btn-meeting" onclick="submitStats(1)">Em Reunião</a>
+                <a class="btn-action btn-busy" onclick="submitStats(2)">Ocupado</a>
+                <a class="btn-action btn-available" onclick="submitStats(3)">Disponível</a>
+            </div>
             <a class="btn-action btn-off" onclick="submitStats(0)">Desligar</a>
         </div>
-        <!-- <button onclick="location.reload()">atualizar</button> -->
+
+        <div class="section col-md-3">
+            <div class="camera area">
+                <span class="header">
+                    <svg width="35" height="34" viewBox="0 0 35 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M24.5833 14.875V9.91667C24.5833 9.1375 23.9458 8.5 23.1667 8.5H6.16667C5.3875 8.5 4.75 9.1375 4.75 9.91667V24.0833C4.75 24.8625 5.3875 25.5 6.16667 25.5H23.1667C23.9458 25.5 24.5833 24.8625 24.5833 24.0833V19.125L30.25 24.7917V9.20833L24.5833 14.875Z" fill="white"/>
+                    </svg>
+                    <b>Porta de entrada</b>
+                </span>
+                <span class="image-cam"></span>
+            </div>
+        </div>
+
+        <div class="section col-md-4">
+            <div class="money area col-md-12">
+                <span class="header">
+                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.91675 14.1667H5.66675V24.0833H9.91675V14.1667Z" fill="white"/>
+                        <path d="M19.125 14.1667H14.875V24.0833H19.125V14.1667Z" fill="white"/>
+                        <path d="M31.1667 26.9167H2.83337V31.1667H31.1667V26.9167Z" fill="white"/>
+                        <path d="M28.3334 14.1667H24.0834V24.0833H28.3334V14.1667Z" fill="white"/>
+                        <path d="M17 1.41666L2.83337 8.49999V11.3333H31.1667V8.49999L17 1.41666Z" fill="white"/>
+                    </svg>
+                    <b>Patrimônio</b> <b>252.283,97</b>
+                </span>
+                <span class="image-cam"></span>
+            </div>
+
+            <div class="section-inside col-md-6">
+                <div class="stocks area">
+                    <span class="header">
+                        <svg width="35" height="34" viewBox="0 0 35 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22.9167 8.5L26.1609 11.7442L19.2475 18.6575L13.5809 12.9908L3.08337 23.5025L5.08087 25.5L13.5809 17L19.2475 22.6667L28.1725 13.7558L31.4167 17V8.5H22.9167Z" fill="white"/>
+                        </svg>                        
+                        <b>Ações</b>
+                    </span>
+                    <div class="stocks-area" id="stocks-area">
+                        <span class="stock">
+                            <b class="left ticker">ALZR11</b>
+                            <b class="right price">115,75</b>
+                            <b class="left desc">Alianza Trust Renda Imobiliária</b>
+                            <b class="right percentage">-0,8%</b>
+                        </span>
+                        <span class="stock">
+                            <b class="left ticker">ALZR11</b>
+                            <b class="right price">115,75</b>
+                            <b class="left desc">Alianza Trust Renda Imobiliária</b>
+                        </span>
+                        <span class="stock">
+                            <b class="left ticker">ALZR11</b>
+                            <b class="right price">115,75</b>
+                            <b class="left desc">Alianza Trust Renda Imobiliária</b>
+                        </span>
+                        <span class="stock">
+                            <b class="left ticker">ALZR11</b>
+                            <b class="right price">115,75</b>
+                            <b class="left desc">Alianza Trust Renda Imobiliária</b>
+                        </span>
+                        <span class="stock">
+                            <b class="left ticker">ALZR11</b>
+                            <b class="right price">115,75</b>
+                            <b class="left desc">Alianza Trust Renda Imobiliária</b>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-inside col-md-6">
+                <div class="stocks cryptos area">
+                    <span class="header">
+                        <svg width="17" height="30" viewBox="0 0 17 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_2_170)">
+                            <path d="M9.1 13.625C6.2625 12.8875 5.35 12.125 5.35 10.9375C5.35 9.575 6.6125 8.625 8.725 8.625C10.95 8.625 11.775 9.6875 11.85 11.25H14.6125C14.525 9.1 13.2125 7.125 10.6 6.4875V3.75H6.85V6.45C4.425 6.975 2.475 8.55 2.475 10.9625C2.475 13.85 4.8625 15.2875 8.35 16.125C11.475 16.875 12.1 17.975 12.1 19.1375C12.1 20 11.4875 21.375 8.725 21.375C6.15 21.375 5.1375 20.225 5 18.75H2.25C2.4 21.4875 4.45 23.025 6.85 23.5375V26.25H10.6V23.5625C13.0375 23.1 14.975 21.6875 14.975 19.125C14.975 15.575 11.9375 14.3625 9.1 13.625Z" fill="white"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_2_170">
+                            <rect width="16" height="30" fill="white" transform="translate(0.25)"/>
+                            </clipPath>
+                            </defs>
+                        </svg>
+                        <b>Criptomoedas</b>
+                    </span>
+                    <div class="stocks-area" id="cryptos-area">
+                        <span class="stock">
+                            <b class="left ticker">BTC</b>
+                            <b class="right price">165.048,39</b>
+                            <b class="left desc">Bitcoin USD</b>
+                        </span>
+                        <span class="stock">
+                            <b class="left ticker">ETH</b>
+                            <b class="right price">115,75</b>
+                            <b class="left desc">Ethereum USD</b>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
         
 	</div>
 

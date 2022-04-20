@@ -21,8 +21,8 @@ body {
     background: #000000;
     /* background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(23,23,23,1) 50%, rgba(0,0,0,1) 100%, rgba(34,34,34,1) 100%, rgba(0,0,0,0.7) 100%); */
     margin:0;
-    position: fixed;
-    width: 100%;
+    /* position: fixed; */
+    /* width: 100%; */
 }
 .logo {
   text-align: center;
@@ -37,19 +37,19 @@ body {
 }
 
 .logo b{
-  font: 400 19vw "Vibur";
+  font: 200 84px "Vibur";
   color: #fee;
-  text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em , 0 0 0.5em , 0 0 0.1em , 0 10px 3px #000;
+  text-shadow: 0 -40px 100px, 0 0 2px, 0 0 3em , 0 0 0.5em , 0 0 0.1em , 0 10px 3px #000;
 }
 .logo #c2,
 .logo #c4{
     /* animação desativada temporariamente pq não funciona no iOS */
-  /* animation: blink linear infinite 2s; */
+  animation: blink linear infinite 2s;
   
 }
 .logo #c2{
     /* animação desativada temporariamente pq não funciona no iOS */
-  /* animation: blink linear infinite 3s; */
+  animation: blink linear infinite 3s;
 }
 .logo b.meeting{
     color: var(--color-meeting);
@@ -111,6 +111,9 @@ a {
     text-decoration:none;
     color:#FFF;
 }
+.buttons-box{
+    display: flex;
+}
 .buttons-box a{
     margin-bottom: 15px;
 }
@@ -122,19 +125,20 @@ a {
 
     animation:flicker 1.5s linear infinite;
 }
-.buttons-box a.btn-action {
+.buttons-box a.btn-action,
+a.btn-off{
     --color-neon: var(--color-off);
-    --off-neon:var(--color-off);
-
-    color:var(--color-neon);
-    text-shadow:var(--neon-shadow-text);
-    border:3px solid var(--color-neon);
-    border-radius:10px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font:400 11vw "Vibur";
-    box-shadow:var(--neon-shadow);
+    --off-neon: var(--color-off);
+    flex: 1;
+    color: var(--color-neon);
+    text-shadow: var(--neon-shadow-text);
+    border: 3px solid var(--color-neon);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font: 400 44px "Vibur";
+    box-shadow: var(--neon-shadow);
     text-decoration: none;
 }
 .buttons-box a.active.btn-meeting{
@@ -146,8 +150,11 @@ a {
 .buttons-box a.active.btn-available{
     --color-neon: var(--color-available);
 }
-.buttons-box a.btn-off{
+a.btn-off{
     border: 0;
+}
+.buttons-box a.btn-action:nth-child(1n+2){
+    margin-left: 15px;
 }
 
 @keyframes flicker {
@@ -213,4 +220,135 @@ a {
         box-shadow:var(--neon-shadow);
         border-color:var(--color-neon);
     }
+}
+
+.main{
+    margin: 0;
+    padding: 50px;
+    height: 100%;
+    width: 100%;
+}
+.main .section{
+    height: 100%;
+    padding: 0 10px;
+}
+.main .section:last-child{
+    padding-right: 0;
+}
+.main .section .section-inside{
+    padding: 20px 10px 0;
+    height: calc(100% - 42px);
+}
+.main .section .section-inside:nth-child(2){
+    padding-left: 0;
+}
+.main .section .section-inside:last-child{
+    padding-right: 0;
+}
+.area{
+    border-radius: 8px;
+    background-color: #4D4C51;
+    padding: 0;
+}
+.area .header{
+    display: block;
+    text-align: center;
+    height: 42px;
+    padding: 4px;
+    box-shadow: 0px 4px 4px 0px #00000026;
+}
+.area .header b{
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 400;
+    margin-left: 8px;
+}
+.area .header svg,
+.area .header b{
+    vertical-align: middle;
+    display: inline-block;
+}
+.camera.area{
+    height: 100%;
+}
+.camera.area img{
+    width: 100%;
+}
+.camera.area .image-cam{
+    display: block;
+    height: calc(100% - 42px);
+    background-image: url();
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: cover;
+    border-radius: 0 0 9px 8px;
+}
+.homeoffice{
+    padding: 0 10px 0 0;
+}
+.area.stocks,
+.area.crypto{
+    /* margin-top: 20px; */
+    color: #ffffff;
+    height: 100%;
+}
+.area.stocks .stocks-area{
+    padding: 8px 12px;
+    height: 100%;
+    overflow: auto;
+    height: calc(100% - 42px);
+}
+.area.stocks .stocks-area .stock{
+    width: 100%;
+    padding: 4px 12px;
+    display: inline-block;
+    border-bottom: 1px solid #ffffff33;
+}
+.area.stocks .stocks-area .stock b.left{
+    float: left;
+    text-transform: uppercase;
+}
+.area.stocks .stocks-area .stock b.right{
+    float: right;
+    text-align: center;
+}
+.stock b.ticker{
+    font-size: 20px;
+    font-weight: 400;
+}
+.stock b.desc{
+    width: 70%;
+    font-weight: 400;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    padding-right: 5px;
+}
+.stock b.price{
+    width: 30%;
+    font-size: 22px;
+    font-weight: 400;
+    direction: rtl;
+}
+.stock b.percentage{
+    width: 30%;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center!important;
+    background: #65C366;
+    border-radius: 4px;
+    line-height: 17px;
+}
+.stock b.percentage.winning{
+    background: #65C366;
+}
+.stock b.percentage.losing{
+    background: #F22828;
+}
+.cryptos .stock b.desc{
+    width: 60%;
+}
+.cryptos .stock b.price{
+    width: 40%;
+    direction: rtl;
 }

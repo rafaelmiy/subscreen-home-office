@@ -38,17 +38,20 @@ var firebaseStats = database.ref();
 
 function submitStats(a) {
 
-    var firebaseStats = database.ref().set({
+    var firebaseStats = database.ref().update({
         stats: a
     });
 
 };
 
-firebaseStats.on('value',function(stats){
-    var stats = stats.val();
+firebaseStats.on('value',function(o){
+    var stats = o.val();
+    var camURL = stats.camURL;
     var color = "#444444";
     stats = stats.stats;
-    // console.log(stats);
+    
+    $('.image-cam').css("background-image", "url("+camURL+")");
+
     var statsNameClass, statsName;
     switch(stats){
         case 0:
@@ -101,3 +104,66 @@ function updateNeon(text){
         $('#c'+(i+1)).html(part);
     }
 }
+
+$(document).ready(function(){
+    $.get('https://brapi.ga/api/quote/CVCB3,PETR3,ALZR11,HGLG11,BCFF11,AAPL34,WEGE3',
+      function(data){
+          var stocks = data.results;
+        // console.log(data.results);
+        $('#stocks-area').empty();
+        for(var s in stocks){
+            var stock = stocks[s];
+
+            var ticker = stock.symbol;
+            var desc = stock.longName;
+            var price = stock.regularMarketPrice;
+            var percentage = stock.twoHundredDayAverageChangePercent.toFixed(2);
+            var situation;
+            if (percentage < 0){
+                situation = 'losing';
+            }else if (percentage > 0){
+                situation = 'winning';
+            }
+            // console.log(stock,ticker, desc, price);
+
+            $('#stocks-area').append(`
+                <span class="stock">
+                    <b class="left ticker">${ticker}</b>
+                    <b class="right price">${price}</b>
+                    <b class="left desc">${desc}</b>
+                    <b class="right percentage ${situation}">${percentage}</b>
+                </span>
+            `);
+        }
+    })
+
+    $.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=brl&ids=bitcoin,ethereum',
+      function(cryptos){
+        // console.log(data.results);
+        $('#cryptos-area').empty();
+        for(var c in cryptos){
+            var crypto = cryptos[c];
+
+            var ticker = crypto.symbol;
+            var desc = crypto.name;
+            var price = crypto.current_price;
+            var percentage = crypto.price_change_percentage_24h.toFixed(2);
+            if (percentage < 0){
+                situation = 'losing';
+            }else if (percentage > 0){
+                situation = 'winning';
+            }
+
+            $('#cryptos-area').append(`
+                <span class="stock">
+                    <b class="left ticker">${ticker}</b>
+                    <b class="right price">${price}</b>
+                    <b class="left desc">${desc}</b>
+                    <b class="right percentage ${situation}">${percentage}</b>
+                </span>
+            `);
+        }
+    })
+})
+
+  
