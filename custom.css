@@ -352,3 +352,48 @@ a.btn-off{
     width: 40%;
     direction: rtl;
 }
+
+@media (max-width: 480px) {
+    .homeoffice{
+        padding: 0;
+        margin-bottom: 20px;
+        display: none;
+    }
+    .homeoffice .buttons-box{
+        display: block;
+    }
+    .homeoffice .buttons-box a.btn-action{
+        font-size: 34px;
+        margin-left: 0;
+    }
+    .homeoffice .logo{
+        margin: 0 0 20px;
+    }
+    .homeoffice .logo b{
+        font-size: 64px;
+    }
+    .homeoffice a.btn-off{
+        font-size: 34px;
+    }
+    .main .section{
+        padding: 0 0 20px;
+        height: auto;
+    }
+    .main .section .section-inside{
+        padding-right: 0;
+        padding-left: 0;
+        height: 100px;
+        min-height: 250px;
+        max-height: 350px;
+    }
+    .area.stocks .stocks-area{
+
+    }
+    /* RETIRAR CSS DE BAIXO */
+    .money.area{
+        display: none;
+    }
+    .camera.area .image-cam{
+        height: 220px;
+    }
+  }

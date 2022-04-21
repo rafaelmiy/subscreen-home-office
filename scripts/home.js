@@ -106,7 +106,7 @@ function updateNeon(text){
 }
 
 $(document).ready(function(){
-    $.get('https://brapi.ga/api/quote/CVCB3,PETR3,ALZR11,HGLG11,BCFF11,AAPL34,WEGE3',
+    $.get('https://brapi.ga/api/quote/ALZR11,HGLG11,CVCB3,PETR3,BCFF11,AAPL34,WEGE3',
       function(data){
           var stocks = data.results;
         // console.log(data.results);
