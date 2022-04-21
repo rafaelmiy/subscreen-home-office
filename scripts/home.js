@@ -147,6 +147,7 @@ $(document).ready(function(){
             var ticker = crypto.symbol;
             var desc = crypto.name;
             var price = crypto.current_price;
+            var image = crypto.image;
             var percentage = crypto.price_change_percentage_24h.toFixed(2);
             if (percentage < 0){
                 situation = 'losing';
@@ -157,6 +158,7 @@ $(document).ready(function(){
             $('#cryptos-area').append(`
                 <span class="stock">
                     <b class="left ticker">${ticker}</b>
+                    <img class="left image" src="${image}">
                     <b class="right price">${price}</b>
                     <b class="left desc">${desc}</b>
                     <b class="right percentage ${situation}">${percentage}</b>
