@@ -25,31 +25,31 @@ body {
     /* width: 100%; */
 }
 .logo {
-  text-align: center;
-  width: 100%;
-  margin: 50px 0 50px;
-  /* position: absolute; */
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-   user-select: none;
+    text-align: center;
+    width: 100%;
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    user-select: none;
+    height: 50%;
 }
 
 .logo b{
-  font: 200 84px "Vibur";
-  color: #fee;
-  text-shadow: 0 -40px 100px, 0 0 2px, 0 0 3em , 0 0 0.5em , 0 0 0.1em , 0 10px 3px #000;
+    font: 200 84px "Vibur";
+    color: #fee;
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 3em , 0 0 0.5em , 0 0 0.1em , 0 10px 3px #000;
 }
 .logo #c2,
 .logo #c4{
     /* animação desativada temporariamente pq não funciona no iOS */
-  animation: blink linear infinite 2s;
+    animation: blink linear infinite 2s;
   
 }
 .logo #c2{
     /* animação desativada temporariamente pq não funciona no iOS */
-  animation: blink linear infinite 3s;
+    animation: blink linear infinite 3s;
 }
 .logo b.meeting{
     color: var(--color-meeting);
@@ -113,9 +113,10 @@ a {
 }
 .buttons-box{
     display: flex;
+    height: 25%;
 }
 .buttons-box a{
-    margin-bottom: 15px;
+    /* margin-bottom: 15px; */
 }
 .buttons-box a.active{
     --neon-shadow:0 0 7px 4px var(--color-neon), 0 0 7px 4px var(--color-neon) inset;
@@ -152,6 +153,8 @@ a.btn-off{
 }
 a.btn-off{
     border: 0;
+    height: 23%;
+    margin-top: 2%;
 }
 .buttons-box a.btn-action:nth-child(1n+2){
     margin-left: 15px;
@@ -285,6 +288,7 @@ a.btn-off{
 }
 .homeoffice{
     padding: 0 10px 0 0;
+    height: 100%;
 }
 .area.stocks,
 .area.crypto{
